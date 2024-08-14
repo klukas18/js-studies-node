@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "447ba787-9d0c-441d-aeb1-55687f23fd98",
+		"name": "NODE PS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33826694"
+	},
+	"item": [
+		{
+			"name": "NODE EXAM",
+			"item": [
+				{
+					"name": "search for ad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/search?category=Cars&isAScam=true&author=John&title=Ferrari Enzo",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"search"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Cars"
+								},
+								{
+									"key": "isAScam",
+									"value": "true"
+								},
+								{
+									"key": "author",
+									"value": "John"
+								},
+								{
+									"key": "title",
+									"value": "Ferrari Enzo"
+								},
+								{
+									"key": "price",
+									"value": "499",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single ad",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "text/html",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "text/css",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/6661c55aad5e8fc04f8a43c8d",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"6661c55aad5e8fc04f8a43c8d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add ad",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Malibu asfasfasf\",\r\n    \"author\": \"Joasfasfasfhn\",\r\n    \"description\": \"Live among the wealthiest!\",\r\n    \"category\": \"Real Estate\",\r\n    \"tags\": [\"Luxury\", \"Living Big\"],\r\n    \"price\": 99,\r\n    \"isAScam\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/add",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify ad",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password2",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"title\": \"Malibu asfasfasf\",\r\n        \"author\": \"Joasfasfasfhn\",\r\n        \"description\": \"Live among the wealthiest!\",\r\n        \"category\": \"Real Estate\",\r\n        \"tags\": [\r\n            \"Luxury\",\r\n            \"Living Big\"\r\n        ],\r\n        \"price\": \"43634636\",\r\n        \"isAScam\": false,\r\n        \"userId\": \"user1\",\r\n        \"date\": \"2024-06-06T14:59:04.676Z\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/6661c55aad5e8fc04f8a43c8",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"6661c55aad5e8fc04f8a43c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ad",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password2",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/6661c55aad5e8fc04f8a43c8",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"6661c55aad5e8fc04f8a43c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "heartbeat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/heartbeat",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"heartbeat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bad request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/something",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"something"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
